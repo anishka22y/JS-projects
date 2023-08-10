@@ -2,7 +2,7 @@
 const button = document.querySelector("button");
 const body = document.querySelector("body");
 
-// Function to generate a random color
+
 function getRandomColor() {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
@@ -10,23 +10,17 @@ function getRandomColor() {
     return `rgb(${r}, ${g}, ${b})`;
 }
 
-let currentColor = getRandomColor(); // Initialize with a random color
-
-// Function to change the background
+let currentColor = getRandomColor(); 
 function changeTheBackground() {
     let newColor;
     
     do {
         newColor = getRandomColor();
-    } while (newColor === currentColor); // Prevent consecutive same colors
+    } while (newColor === currentColor); 
     
-    currentColor = newColor; // Store the current color
+    currentColor = newColor;
     
     body.style.backgroundColor = newColor;
 }
-
-// Setting a default color
 body.style.backgroundColor = currentColor;
-
-// Adding event listener to the button
 button.addEventListener("click", changeTheBackground);
