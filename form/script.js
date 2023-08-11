@@ -15,6 +15,7 @@ function checkingInputs() {
     const emailValue = email.value.trim();
     const passwordValue = password.value.trim();
     const passwordCheckValue = passwordCheck.value.trim();
+    console.log(usernameValue, emailValue, passwordValue)
 
     if (usernameValue === ""){
         setErrorFor(username, "Username cannot be empty");
@@ -44,8 +45,9 @@ function checkingInputs() {
         setSuccessFor(passwordCheck);
     }
 
-    if (usernameValue === true && ) {
 
+    if (usernameValue  === true){
+        
     }
 }
 
