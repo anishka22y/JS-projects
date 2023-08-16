@@ -1,6 +1,9 @@
 
 const quotes = [
     {
+        current :  1
+    },
+    {
         quote: "The only way to do great work is to love what you do.",
         author: "Steve Jobs",
         image: "stevejobs.jpg"
@@ -40,7 +43,7 @@ const quotes = [
     {
         quote:"If you do what you’ve always done, you’ll get what you’ve always gotten.",
          author:"Tony Robbins",
-        Image: "tony.jpg"
+        image: "tony.jpg"
         },
 
    {
@@ -76,7 +79,7 @@ const quotes = [
                 {
                     quote:"You become what you believe.",
                     author:"Oprah Winfrey",
-                    Image: "oprah.jpg"
+                    image: "oprah.jpg"
                 }        
 ];
 
@@ -86,14 +89,18 @@ const authorNameElement = document.getElementById('author-name');
 const generateBtn = document.getElementById('generate-btn');
 
 generateBtn.addEventListener('click', generateQuote);
-
+let randomIndex = 1;
 function generateQuote() {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    const randomQuote = quotes[randomIndex];
+    let index = quotes[0].current 
+    const randomQuote = quotes[index];
 
     quoteElement.textContent = randomQuote.quote;
     authorNameElement.textContent = randomQuote.author;
     authorImageElement.src = randomQuote.image;
+    quotes[0].current = quotes[0].current+1;
+    if (quotes[0].current >10){
+        quotes[0].current = 1
+    }
 }
 
 // Initial quote generation
